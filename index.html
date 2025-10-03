@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Panela - Convite de Lista de Presentes Elegante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Chá de Panela</h1>
+                <p class="subtitle">Você está convidado(a) para celebrar a união de</p>
+                <div class="bride-name">❤️ [Nome da Noiva] & [Nome do Noivo] ❤️</div>
+                <p class="subtitle">Um momento especial para celebrarmos e montarmos nossa casinha!</p>
+            </div>
+        </div>
+
+        <div class="event-info">
+            <div class="section-header">
+                <h2 class="section-title">Detalhes do Evento</h2>
+            </div>
+            
+            <div class="event-grid">
+                <div class="event-card">
+                    <div class="event-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="event-label">Data</div>
+                    <div class="event-value">[Data do Evento: Ex. 15 de Dezembro de 2025]</div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon"><i class="far fa-clock"></i></div>
+                    <div class="event-label">Horário</div>
+                    <div class="event-value">[Hora do Evento: Ex. 15:00h]</div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="event-label">Local</div>
+                    <div class="event-value">[Endereço do Evento Completo]</div>
+                    <a href="#" target="_blank" class="map-button">Ver no Mapa <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalGifts">0</div>
+                <div class="stat-label">Total de Itens</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="availableGifts">0</div>
+                <div class="stat-label">Disponíveis</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="selectedGifts">0</div>
+                <div class="stat-label">Reservados/Contribuídos</div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2 class="section-title">Lista de Presentes de Chá de Panela</h2>
+            <p class="section-subtitle">
+                Escolha o item que deseja nos presentear. Para itens com **(Ajuda)**, você pode contribuir com o valor que desejar!
+            </p>
+        </div>
+
+        <div class="gifts-grid" id="giftsGrid">
+            </div>
+
+        <div class="contact-section">
+            <h3 class="contact-title">Dúvidas e Confirmação de Presença (RSVP)</h3>
+            <p class="section-subtitle">Abaixo estão nossos contatos para que você possa confirmar sua presença e tirar qualquer dúvida sobre o evento:</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="contact-info">
+                        <div class="contact-label">WhatsApp</div>
+                        <div>[Telefone Organizador(a)]</div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-info">
+                        <div class="contact-label">E-mail</div>
+                        <div>[E-mail de Contato]</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-message">
+                ✨ Sua presença é o nosso maior presente! Compartilhe este momento de alegria conosco. 💕
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-content">
+            <span>© 2025 Convite Chá de Panela</span>
+            <a href="admin.html" style="color: var(--color-gold); text-decoration: none; font-weight: 600;">[Painel Admin]</a>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <h4 class="modal-title"><i class="fas fa-gift"></i> Confirmar Presente</h4>
+                <p class="modal-gift-name" id="selectedGiftName"></p>
+            </div>
+            
+            <div class="modal-inputs">
+                <input type="text" class="modal-input" id="guestName" placeholder="Seu nome completo para reserva" required>
+                
+                <input type="tel" class="modal-input" id="guestPhone" placeholder="Seu WhatsApp (ex: 11 99999-9999)" required>
+
+                <div id="valueInputGroup" class="modal-input-group" style="display: none;">
+                    <span>R$</span>
+                    <input type="text" class="modal-input value-input" id="contributionValue" placeholder="Valor da Ajuda (Ex: 100,00)" required>
+                </div>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="modal-btn confirm-btn" onclick="confirmSelection()">
+                    <i class="fas fa-check"></i> <span id="confirmButtonText">Reservar Agora</span>
+                </button>
+                <button class="modal-btn cancel-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Lista de Presentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> </head>
+<body class="admin-page">
+    <div class="container">
+        <div class="admin-header">
+            <h1><i class="fas fa-lock"></i> Painel de Administração</h1>
+            <p>Gerencie os presentes reservados e as contribuições da Vaquinha.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalGifts">0</div>
+                <div class="stat-label">Total de Itens</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="availableGifts">0</div>
+                <div class="stat-label">Disponíveis</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="selectedGifts">0</div>
+                <div class="stat-label">Reservados/Contribuídos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalContributions">R$ 0,00</div>
+                <div class="stat-label">Total Arrecadado</div>
+            </div>
+        </div>
+
+        <div class="gift-list" id="adminGiftList">
+            </div>
+        
+        <p style="text-align: center; margin-top: 40px;">
+            <a href="index.html" style="color: var(--color-info); text-decoration: none; font-weight: 600;">
+                <i class="fas fa-arrow-left"></i> Voltar para o Convite
+            </a>
+        </p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
